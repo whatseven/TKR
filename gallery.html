@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的照片集</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="gallery-header">
+            <button class="back-button" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i> 返回主页
+            </button>
+            <h1>我的照片集</h1>
+            <div class="bunny-decoration">
+                <img src="pink-bunny.png" alt="粉色小兔子" class="bunny-icon">
+            </div>
+        </header>
+
+        <div class="upload-section">
+            <label for="photo-upload" class="upload-btn">
+                <i class="fas fa-cloud-upload-alt"></i> 上传照片
+            </label>
+            <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;">
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- 照片将在这里动态显示 -->
+        </div>
+
+        <div class="bunny-corner">
+            <img src="bunny-corner.png" alt="兔子装饰" class="bunny-decoration">
+        </div>
+    </div>
+    <script src="gallery.js"></script>
+</body>
+</html> 

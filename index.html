@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人空间</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 个人信息部分 -->
+        <header>
+            <div class="profile">
+                <div class="photo-container">
+                    <img src="default-avatar.png" alt="个人照片" class="profile-photo" id="profile-photo">
+                    <label for="profile-upload" class="photo-upload-btn">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+                </div>
+                <div class="name-container">
+                    <h1 id="user-name">你的名字</h1>
+                    <button class="edit-name-btn" onclick="editName()">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="clock">
+                <div class="analog-clock">
+                    <div class="clock-face">
+                        <div class="hand hour-hand"></div>
+                        <div class="hand minute-hand"></div>
+                        <div class="hand second-hand"></div>
+                    </div>
+                </div>
+                <span id="time"></span>
+                <span id="date"></span>
+            </div>
+        </header>
+
+        <div class="nav-buttons">
+            <button class="photo-gallery-button" onclick="window.location.href='gallery.html'">
+                <i class="fas fa-images"></i> 我的照片集
+            </button>
+            <button class="memo-button" onclick="scrollToMemo()">
+                <i class="fas fa-sticky-note"></i> 前往备忘录
+            </button>
+        </div>
+
+        <!-- 备忘录部分 -->
+        <main>
+            <div class="memo-container" id="memo-section">
+                <div class="memo-input">
+                    <input type="text" id="memo-title" placeholder="标题">
+                    <textarea id="memo-content" placeholder="写下你的想法..."></textarea>
+                    <div class="memo-options">
+                        <div class="reminder-section">
+                            <label for="reminder-time">提醒时间：</label>
+                            <input type="datetime-local" id="reminder-time">
+                        </div>
+                        <div class="image-upload">
+                            <label for="memo-image" class="upload-btn">
+                                <i class="fas fa-image"></i> 添加图片
+                            </label>
+                            <input type="file" id="memo-image" accept="image/*">
+                        </div>
+                    </div>
+                    <button onclick="addMemo()">保存备忘录</button>
+                </div>
+                <div class="memo-list" id="memo-list">
+                    <!-- 备忘录将在这里动态显示 -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
